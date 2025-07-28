@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangga's Simple Landing Page</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f9ff; /* Very light blue background */
+            color: #1a202c; /* Dark text for contrast */
+        }
+        .hero-background {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); /* Indigo to Purple gradient */
+            background-size: 200% 200%;
+            animation: gradientFlow 15s ease infinite; /* Slower, smoother gradient animation */
+        }
+
+        /* Keyframe Animations */
+        @keyframes slideInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInScale {
+            from { opacity: 0; transform: scale(0.98); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes gradientFlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Apply animations with delays */
+        .animate-slide-in-up { animation: slideInUp 0.8s ease-out forwards; }
+        .animate-fade-in-scale { animation: fadeInScale 0.7s ease-out forwards; }
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
+        .delay-500 { animation-delay: 0.5s; }
+        .delay-600 { animation-delay: 0.6s; }
+        .delay-700 { animation-delay: 0.7s; }
+
+        /* Button hover effect */
+        .btn-hover-effect {
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .btn-hover-effect:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Card hover effect */
+        .card-hover-effect {
+            transition: all 0.3s ease-in-out;
+        }
+        .card-hover-effect:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header Section -->
+    <header class="bg-white shadow-lg py-4 px-6 md:px-12 flex justify-between items-center rounded-b-xl opacity-0 animate-slide-in-up">
+        <div class="text-3xl font-extrabold text-indigo-700">
+            <a href="#" class="hover:text-indigo-900 transition duration-300">Hangga's Simple Landing Page</a>
+        </div>
+        <nav class="hidden md:flex space-x-8">
+            <a href="#solutions" class="text-gray-700 hover:text-indigo-700 font-medium transition duration-300">Solutions</a>
+            <a href="#about" class="text-gray-700 hover:text-indigo-700 font-medium transition duration-300">About</a>
+            <a href="#contact" class="text-gray-700 hover:text-indigo-700 font-medium transition duration-300">Contact</a>
+        </nav>
+        <button class="md:hidden text-gray-700 hover:text-indigo-700 focus:outline-none">
+            <!-- Mobile Menu Icon (Hamburger) -->
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+        </button>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-background text-white py-24 md:py-40 flex items-center justify-center text-center rounded-xl mx-4 mt-8 shadow-2xl">
+        <div class="max-w-4xl px-4">
+            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6 drop-shadow-lg opacity-0 animate-slide-in-up delay-200">
+                Your Vision. Our Expertise.
+            </h1>
+            <p class="text-lg md:text-xl mb-10 drop-shadow-md opacity-0 animate-slide-in-up delay-400">
+                Transforming ideas into impactful realities with innovative and reliable solutions.
+            </p>
+            <div class="space-y-4 sm:space-y-0 sm:space-x-6 flex flex-col sm:flex-row justify-center">
+                <a href="#contact" class="bg-white text-indigo-700 hover:bg-indigo-100 font-bold py-3 px-8 rounded-full btn-hover-effect opacity-0 animate-fade-in-scale delay-600">
+                    Get a Free Consultation
+                </a>
+                <a href="#solutions" class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-indigo-700 font-bold py-3 px-8 rounded-full btn-hover-effect opacity-0 animate-fade-in-scale delay-700">
+                    Discover Our Services
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section id="solutions" class="py-16 md:py-24 bg-white mx-4 mt-8 rounded-xl shadow-lg">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-12 opacity-0 animate-slide-in-up delay-200">What We Offer</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Solution 1 -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md card-hover-effect opacity-0 animate-fade-in-scale delay-300">
+                    <div class="text-indigo-600 mb-4">
+                        <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h4l2-2m-6-2h5a2 2 0 002-2V9a2 2 0 00-2-2H9a2 2 0 00-2 2v5a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-700 mb-3">Strategic Planning</h3>
+                    <p class="text-gray-600">Develop a clear roadmap for your business growth and digital presence.</p>
+                </div>
+                <!-- Solution 2 -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md card-hover-effect opacity-0 animate-fade-in-scale delay-500">
+                    <div class="text-indigo-600 mb-4">
+                        <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-700 mb-3">Creative Design</h3>
+                    <p class="text-gray-600">Visually stunning and user-friendly designs that capture your audience's attention.</p>
+                </div>
+                <!-- Solution 3 -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md card-hover-effect opacity-0 animate-fade-in-scale delay-700">
+                    <div class="text-indigo-600 mb-4">
+                        <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-700 mb-3">Technical Execution</h3>
+                    <p class="text-gray-600">Robust and scalable development, bringing your digital products to life.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-16 md:py-24 bg-gray-50 mx-4 mt-8 rounded-xl shadow-lg">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
+            <div class="md:w-1/2 opacity-0 animate-slide-in-up delay-200">
+                <img src="https://placehold.co/600x400/a78bfa/ffffff?text=Our+Story" alt="Our Team" class="rounded-lg shadow-xl w-full h-auto">
+            </div>
+            <div class="md:w-1/2 text-center md:text-left opacity-0 animate-slide-in-up delay-400">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Our Commitment to Excellence</h2>
+                <p class="text-gray-600 text-lg leading-relaxed mb-6">
+                    We are a passionate team dedicated to delivering exceptional results. With a focus on innovation and client satisfaction, we partner with you to navigate the digital landscape and achieve your business objectives.
+                </p>
+                <p class="text-gray-600 text-lg leading-relaxed">
+                    Our approach is collaborative, transparent, and driven by a desire to see you succeed.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="py-16 md:py-24 bg-indigo-700 text-white text-center mx-4 mt-8 rounded-xl shadow-lg">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 opacity-0 animate-slide-in-up delay-200">Ready to Start Your Project?</h2>
+            <p class="text-lg md:text-xl mb-8 opacity-90 opacity-0 animate-slide-in-up delay-400">
+                Let's discuss how we can bring your ideas to life and drive impactful results.
+            </p>
+            <a href="#contact" class="bg-white text-indigo-700 hover:bg-indigo-100 font-bold py-4 px-10 rounded-full btn-hover-effect opacity-0 animate-fade-in-scale delay-600">
+                Connect With Us
+            </a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 md:py-24 bg-white mx-4 mt-8 rounded-xl shadow-lg">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-12 opacity-0 animate-slide-in-up delay-200">Get in Touch</h2>
+            <div class="max-w-xl mx-auto">
+                <form class="space-y-6 opacity-0 animate-slide-in-up delay-400">
+                    <div>
+                        <input type="text" id="name_engaging" name="name" placeholder="Your Name" class="w-full p-4 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500 transition duration-200 ease-in-out" required>
+                    </div>
+                    <div>
+                        <input type="email" id="email_engaging" name="email" placeholder="Your Email" class="w-full p-4 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500 transition duration-200 ease-in-out" required>
+                    </div>
+                    <div>
+                        <textarea id="message_engaging" name="message" rows="6" placeholder="Your Message" class="w-full p-4 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500 transition duration-200 ease-in-out" required></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 px-6 rounded-md shadow-lg btn-hover-effect">
+                        Send Your Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-900 text-gray-300 py-8 px-6 md:px-12 mt-8 rounded-t-xl">
+        <div class="container mx-auto text-center md:flex md:justify-between md:items-center">
+            <div class="mb-4 md:mb-0">
+                <p>&copy; 2025 Your Company. All rights reserved.</p>
+            </div>
+            <div class="flex justify-center space-x-6">
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300">Privacy Policy</a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
